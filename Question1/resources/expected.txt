@@ -1,0 +1,8 @@
+left1: 10
+left2: 7
+left3: 5
+left4: 8
+right1: 3
+right2: 7
+right3: 10
+right4: 1

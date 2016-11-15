@@ -1,0 +1,53 @@
+fingerMap = {
+		'left4': {'q','a','z'},
+		'left3': {'w', 's', 'x'},
+		'left2': {'e','d','c'},
+		'left1': {'r', 'f', 'v','t','g','b'},
+		'right1': {'y','h','n','u','j','m'},
+		'right2': {'i', 'k'},
+		'right3': {'o','l'},
+		'right4': {'p'},
+	}
+outputOrder = ['left1','left2','left3','left4','right1','right2','right3','right4']
+
+def countFingerPresses(string):
+	'''
+	Don't rename this function
+	Please implement this function:
+	input will be the string to analyze
+	output should be the analyze result(string):
+	left1: *
+	left2: *
+	...
+	Please refer to resources/expected.txt for the output format
+	'''
+	reverseMap = createReverseMap(fingerMap)
+	countMap = {}
+	initCount(fingerMap, countMap)
+	for c in string:
+		if c in reverseMap:
+			finger = reverseMap[c]
+			countMap[finger] += 1
+			
+	return printMapWithOrder(countMap, outputOrder)
+
+def printMapWithOrder(countMap, order):
+	output = ""
+	for finger in outputOrder:
+		count = countMap[finger]
+		output += finger + ": " + str(count) + "\n"
+	return output
+
+def createReverseMap(fingerMap):
+	'''mapping of every character and its finger'''
+	reverseMap = {}
+	for finger, keys in fingerMap.items():
+		for key in keys:
+			reverseMap[key] = finger
+	return reverseMap
+
+def initCount(keyMap, countMap):
+	'''mapping of every finger and its count'''
+	for finger in keyMap:
+		countMap[finger] = 0
+

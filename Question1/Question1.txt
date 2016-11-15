@@ -1,0 +1,22 @@
+Given a string, write a program to count how many finger presses is needed in order to type out the string
+(Assume using standard keyboard, standard finger placement)
+
+Eg. Given string "xiao orange"
+	Left hand fourth finger type "x", right hand mid finger type "i" ......
+	
+expected output:
+(use 1, 2, 3, 4 to represent for index finger, mid finger, fourth finger, little finger)
+
+	left4: 2 (left little finger used 2 times)
+	...
+	left1: 2
+
+	right1: ...
+	...
+	right4: ...
+
+Instructions:
+	implement function countFingerPresses in module solution.py
+
+How to test:
+	run "python test.py" to test your solution
